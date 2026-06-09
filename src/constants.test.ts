@@ -1,6 +1,19 @@
 import { describe, it, expect } from "vitest";
-import { CATEGORIES } from "../constants.js";
+import { CATEGORIES } from "./constants.js";
 
 describe("CATEGORIES", () => {
-  it.todo("is a non-empty array of valid category strings");
+  it("is a non-empty array", () => {
+    expect(CATEGORIES.length).toBeGreaterThan(0);
+  });
+
+  it("contains only non-empty strings", () => {
+    for (const category of CATEGORIES) {
+      expect(typeof category).toBe("string");
+      expect(category.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("has no duplicate values", () => {
+    expect(new Set(CATEGORIES).size).toBe(CATEGORIES.length);
+  });
 });

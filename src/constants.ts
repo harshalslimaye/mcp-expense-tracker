@@ -1,4 +1,14 @@
-// TODO: populate CATEGORIES with expense category values
-export const CATEGORIES = [] as const;
+export const CATEGORIES = [
+  "Food & Dining",
+  "Transportation",
+  "Shopping",
+  "Entertainment",
+  "Healthcare",
+  "Housing",
+  "Utilities",
+  "Travel",
+  "Education",
+  "Other",
+] as const;
 
 export type Category = (typeof CATEGORIES)[number];
